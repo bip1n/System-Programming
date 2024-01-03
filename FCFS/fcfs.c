@@ -3,7 +3,7 @@ WRITE C PROGRAM TO IMPLEMENT FCFS SCHEDULING ALGORITHM
 */
 
 #include <stdio.h>
-
+#include <conio.h>
 struct Process{
     int pid;
     int at;
@@ -36,14 +36,10 @@ void displayProcesses(struct Process processes[], int n) {
 }
 
 int main() {
-    int n;
-    printf("Enter the number of processes: ");
-    scanf("%d", &n);
 
-    struct Process processes[n];
-
+    struct Process processes[4];
     printf("Enter arrival time and burst time for each process:\n");
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < 4; i++) {
         processes[i].pid = i + 1;
         printf("Arrival time of process %d: ", i + 1);
         scanf("%d", &processes[i].at);
@@ -51,9 +47,8 @@ int main() {
         scanf("%d", &processes[i].bt);
     }
 
-    calculateTimes(processes, n);
-    displayProcesses(processes, n);
-
+    calculateTimes(processes, 4);
+    displayProcesses(processes,4);
+    getch();
     return 0;
 }
-
